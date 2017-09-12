@@ -1,0 +1,204 @@
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="build/css/vendor.css">
+  <script src="build/js/vendor.min.js"></script>
+  <script type="text/javascript" src="build/js/app.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta charset="utf-8">
+  <title>Weather</title>
+</head>
+<body>
+  <div class="container">
+
+    <form id="character-form" class="form-group">
+      <label for="realm">Enter Realm:</label>
+      <input type="text" name="realm" id="realm-input" class="form-control">
+
+      <label for="character">Enter Character Name:</label>
+      <input type="text" name="character" id="character-input" class="form-control">
+
+      <button type="submit" name="button" class="btn btn-success">Find!</button>
+    </form>
+
+    <div id="result">
+      <div class="row page-header" id="headerRow">   <!-- Header for character info -->
+        <div class="col-md-2" id="playerIcon">
+
+        </div>
+
+        <div class="col-md-2" >
+          <h1 id="playerName"></h1>
+        </div>
+
+        <div class="col-md-8" id="playerDetails">
+          <h1>Level <span id="charLevel"></span></h1>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div id="itemsLeft" class="col-md-4">
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="head">
+            </div>
+            <div class="col-md-6">
+              <p id="headName" class="itemName"></p>
+              <p id="headLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="neck">
+            </div>
+            <div class="col-md-6">
+              <p id="neckName" class="itemName"></p>
+              <p id="neckLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="shoulder">
+            </div>
+            <div class="col-md-6">
+              <p id="shoulderName" class="itemName"></p>
+              <p id="shoulderLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="back">
+            </div>
+            <div class="col-md-6">
+              <p id="backName" class="itemName"></p>
+              <p id="backLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="chest">
+            </div>
+            <div class="col-md-6">
+              <p id="chestName" class="itemName"></p>
+              <p id="chestLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="shirt">
+            </div>
+            <div class="col-md-6">
+              <p id="shirtName" class="itemName"></p>
+              <p id="shirtLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="wrist">
+            </div>
+            <div class="col-md-6">
+              <p id="wristName" class="itemName"></p>
+              <p id="wristLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-2" id="mainHand">
+            </div>
+            <div class="col-md-6">
+              <p id="mainHandName" class="itemName"></p>
+              <p id="mainHandLevel" class="itemLevel"></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-4" id="portrait">
+          <img src="https://summerprojectresearch.files.wordpress.com/2014/12/male.png" alt="">
+        </div>
+
+        <div id="itemsRight" class="col-md-4">
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="handsName" class="itemName"></p>
+              <p id="handsLevel" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="hands">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="waistName" class="itemName"></p>
+              <p id="waistLevel" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="waist">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="legsName" class="itemName"></p>
+              <p id="legsLevel" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="legs">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="feetName" class="itemName"></p>
+              <p id="feetLevel" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="feet">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="finger1Name" class="itemName"></p>
+              <p id="finger1Level" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="finger1">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="finger2Name" class="itemName"></p>
+              <p id="finger2Level" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="finger2">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="trinket1Name" class="itemName"></p>
+              <p id="trinket1Level" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="trinket1">
+            </div>
+          </div>
+
+          <div class="row itemRow">
+            <div class="col-md-6">
+              <p id="trinket2Name" class="itemName"></p>
+              <p id="trinket2Level" class="itemLevel"></p>
+            </div>
+            <div class="col-md-2" id="trinket2">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

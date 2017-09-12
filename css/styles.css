@@ -1,0 +1,31 @@
+#result{
+  display: none;
+}
+#portrait img{
+
+  width: 400px;
+  height: auto;
+}
+
+.itemRow {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.itemName{
+  padding-bottom: 0px;
+  font-weight: bold;
+
+}
+.itemLevel{
+  font-size: .8em;
+  padding-top: 1px;
+  line-height: 0px;
+  margin-top: 0px;
+}
+#headerRow{
+  margin-bottom: 50px;
+}
+
+#itemsRight .itemRow{
+  text-align: right;
+}
